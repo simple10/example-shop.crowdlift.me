@@ -1,0 +1,31 @@
+<script>
+document.addEventListener('load', onload);
+document.addEventListener('DOMContentLoaded', ondomload);
+document.addEventListener('message', onmessage);
+
+function onload(){
+  console.log('iframe page loaded');
+}
+
+function ondomload(){
+  console.log('iframe dom loaded');
+}
+
+function onmessage(event){
+  console.log('iframe received message:', event);
+}
+</script>
+
+<h1>This is an iframe with a gaint image</h1>
+
+<pre id="log">
+LOG:
+
+</pre>
+  
+<script>
+  var log = document.getElementById('log');
+  log.innerHTML += 'Window referrer: ' + window.referrer + '\nDocument referrer: ' + document.referrer + '\n';
+</script>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/LARGE_elevation.jpg" style="max-width:200px; max-height:200px">
